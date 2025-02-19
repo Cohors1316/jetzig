@@ -626,7 +626,7 @@ const RequestMail = struct {
 /// Must call `deliver` on the returned `RequestMail` to send the email.
 /// Example:
 /// ```zig
-/// const mail = request.mail("welcome", .{ .to = &.{"hello@jetzig.dev"} });
+/// const mail = request.mail("welcome", .{ .to = &.{.{ .email = "hello@jetzig.dev" } } });
 /// try mail.deliver(.background, .{});
 /// ```
 pub fn mail(self: *Request, name: []const u8, mail_params: jetzig.mail.MailParams) RequestMail {
